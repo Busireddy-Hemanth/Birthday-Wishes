@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Birthday Wish for you Madam</title>
+  <style media="screen">
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10%;
+	  background-color:lightblue;
+    }
+    #wishing-div{
+      width:auto;
+      background-image: linear-gradient(green,pink);
+    }
+
+    .main-div {
+      width: 100%;
+      height: 100%;
+    }
+    .Birthday {
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      background-color: red;
+      position: relative;
+      transform: rotate(-45deg);
+      box-shadow: -10px 10px 80px red;
+      animation: heart 1s linear infinite;
+    }
+
+    .Birthday:before {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: -50%;
+      border-radius: 50%;
+      background-color: red;
+      box-shadow: -10px -10px 80px red;
+    }
+
+    @keyframes heart {
+      0% {
+        transform: rotate(-45deg) scale(1.07);
+      }
+
+      80% {
+        transform: rotate(-45deg) scale(1.0);
+      }
+
+      100% {
+        transform: rotate(-45deg) scale(0.8)
+      }
+    }
+
+    .Birthday:after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: -50%;
+      border-radius: 50%;
+      background-color: red;
+      box-shadow: 10px 10px 80px red;
+    }
+
+    #Birth {
+      display: none;
+    }
+  </style>
+</head>
+<script type="text/javascript">
+  var i = 10;
+  var time = setInterval(function() {
+    var date = new Date(2006, 05, 25, 12);
+    var date1 = new Date();
+    date.setYear(date1.getFullYear());
+    const diff = date - date1;
+    var days = Math.floor(diff / (60 * 60 * 24 * 1000));
+    var hours = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+    var minutes = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
+    var seconds = Math.floor(diff % (1000 * 60) / (1000));
+    document.getElementById('wish').innerHTML = days + "::Days " + hours + "::Hours " + minutes + "::Minutes " + seconds + "::Seconds";
+    if (seconds == 0) {
+      console.log(i);
+      window.location.href="birthday.html";
+    }
+  }, 1000);
+</script>
+<body>
+  <div class="" id="wishing-div">
+    <h1 id="wish"></h1>
+  </div>
+  <div class="main-div" id="Birth" >
+    <div class="" style=text-align:center>
+      <h1 >Happy Birthday Madhu</h1>
+      <h1 style=color:red>Hello This Is Hemanth.</h1>
+    </div>
+    <br><br><br><br><br><br>
+    <h1>Hello JASHNAVI</h1>
+    <div class="Birthday">
+    </div>
+  </div>
+</body>
+</html>
