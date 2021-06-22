@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Birthday Wish for you Madam</title>
   <style media="screen">
     body {
@@ -13,7 +14,7 @@
       align-items: center;
       justify-content: center;
       margin-top: 10%;
-	  background-color:lightblue;
+      background-color:lightblue;
     }
     #wishing-div{
       width:auto;
@@ -88,8 +89,7 @@
     var minutes = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
     var seconds = Math.floor(diff % (1000 * 60) / (1000));
     document.getElementById('wish').innerHTML = days + "::Days " + hours + "::Hours " + minutes + "::Minutes " + seconds + "::Seconds";
-    if (seconds == 0) {
-      console.log(i);
+    if (seconds == 0 && minutes==0 && hours==0 && days==0 ) {
       window.location.href="Birthday.html";
     }
   }, 1000);
